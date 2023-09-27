@@ -170,7 +170,8 @@ const addProducts = async (req, res) => {
 const getProducts = async (req, res) => {
     try {
         const products = await producto.findAll();
-        res.render("productos", { products });
+        res.json(products);
+    //res.render("productos", { products });
     } catch (err) {
         console.log(err);
         res.status(500).json({ err: "Error al obtener los productos" });

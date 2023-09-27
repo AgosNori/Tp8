@@ -7,9 +7,10 @@ const PORT = 3000;
 // requerir express session
 const session = require("express-session");
 
+const cors = require("cors");
 // motor de plantillas
 app.set("view engine","ejs")
-
+app.use(cors())
 // para poder ver los archivos que tenga guardado dentro de la carpeta public
 app.use(express.static("public"));
 
